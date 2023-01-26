@@ -251,6 +251,7 @@ function generate_commit_and_make_the_commit() {
 			if ! touch $filepath; then
 				error "Cannot touch file: $filepath" 1
 			fi
+			echo $filepath "content"> $filepath;
 			if ! git add $filepath; then
 				error "Cannot add file to Git repository: $filepath" 1
 			fi
